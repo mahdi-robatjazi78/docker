@@ -1,6 +1,6 @@
-///////////////
+---------------
 docker cmd
-//////////////
+---------------
 docker ps
 
 docker ps -a
@@ -19,8 +19,17 @@ docker-compose up -d --build
 
 docker-compose up -d --force-recreate
 
-///////////
+---------------
 linux cmd
-//////////
+---------------
 
 ll
+
+
+---------------
+links and cheat sheets
+---------------
+
+docker : https://dockerlabs.collabnix.com/docker/cheatsheet/
+
+docker compose : https://gist.github.com/jonlabelle/bd667a97666ecda7bbc4f1cc9446d43a
