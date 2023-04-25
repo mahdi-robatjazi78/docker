@@ -1,0 +1,33 @@
+FROM node:lts as builder
+WORKDIR /app
+
+COPY . .
+
+COPY .env.docker .env
+
+RUN yarn install \
+  --prefer-offline \
+  --frozen-lockfile \
+  --non-interactive \
+  --production=false
+
+RUN export NODE_OPTIONS=--openssl-legacy-provider && yarn generate
+
+RUN rm -rf node_modules && \
+  NODE_ENV=production yarn install \
+  --prefer-offline \
+  --pure-lockfile \
+  --non-interactive \
+  --production=true
+
+FROM node:lts
+
+WORKDIR /app
+
+COPY --from=builder /app  .
+COPY .env.docker .env
+
+ENV HOST 0.0.0.0
+EXPOSE 3000
+
+CMD [ "yarn", "start" ]
