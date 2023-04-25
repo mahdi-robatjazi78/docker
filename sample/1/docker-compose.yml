@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    container_name: 'dorm.hidevs.ir'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '0.0.0.0:9004:3000'
