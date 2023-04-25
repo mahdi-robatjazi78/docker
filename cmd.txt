@@ -1,0 +1,29 @@
+///////////////
+docker cmd
+//////////////
+docker ps
+
+docker ps -a
+
+docker pull amd64/ubuntu:20.04
+
+docker images
+
+docker rm 90b 8fb
+
+docker stop a40 0ff
+
+docker exec -it docker_os_1 bash
+
+docker-compose up -d --build
+
+docker-compose up -d --force-recreate
+
+
+
+
+///////////
+linux cmd
+//////////
+
+ll
