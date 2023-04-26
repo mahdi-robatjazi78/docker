@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+    nginx_front:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: nginx_front
+        ports:
+            - '8081:80'
+        restart: always
+        tty: true
